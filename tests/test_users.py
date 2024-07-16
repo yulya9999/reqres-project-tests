@@ -49,6 +49,8 @@ def test_post_register_user_successful():
     body = response.json()
 
     assert response.status_code == 200
+    assert body["id"] == 4
+
     validate(body, schema=register_user)
 
 
