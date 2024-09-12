@@ -80,11 +80,3 @@ allure serve test/allure-results/
 <img src="resources/images/telegram-report.png" alt="report Telegram">
 
 </details>
-
-## **Дополнительно**
-
-<details><summary>Пример видеоотчета о прохождении тестов</summary>
-
-<img src="resources/videos/gif_test.gif" alt="gif example">
-
-</details>
