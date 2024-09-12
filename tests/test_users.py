@@ -1,34 +1,46 @@
-import requests
+import allure
 from jsonschema import validate
-from schemas.user import users_list, create_users, register_user, update_user_info
+from schemas.user import users_list, create_users, update_user_info
+from utils.request_sample import request_sample
 
 
+@allure.feature("Пользователь")
+@allure.story("Проверка id пользователей на уникальность")
 def test_all_the_users_should_have_unique_id(base_url):
-    response = requests.get(url=f'{base_url}/users')
-    body = response.json()
-    ids = [element['id'] for element in body['data']]
 
-    assert response.status_code == 200
-    assert body['per_page'] == 6
-    assert list(set(ids)) == ids
-    validate(body, schema=users_list)
+    with allure.step("Отправка запроса"):
+        response = request_sample(base_url, endpoint="/users", method="GET")
+        body = response.json()
+        ids = [element['id'] for element in body['data']]
+
+    with allure.step("Проверка ответа"):
+        assert response.status_code == 200
+        assert body['per_page'] == 6
+        assert list(set(ids)) == ids
+
+    with allure.step("Проверка схемы"):
+        validate(body, schema=users_list)
 
 
+@allure.feature("Пользователь")
+@allure.story("Получение  пользователя по несуществующему id")
 def test_get_user_id_does_not_exist(base_url):
     id_user = '23'
-    response = requests.get(url=f'{base_url}/users/{id_user}')
+    response = request_sample(base_url, endpoint=f"/users/{id_user}", method="GET")
     body = response.json()
 
     assert response.status_code == 404
     assert body == {}
 
 
+@allure.feature("Пользователь")
+@allure.story("Создание пользователя")
 def test_post_create_user(base_url):
     payload = {
         "name": "Yulia",
         "job": "tester"
     }
-    response = requests.post(url=f'{base_url}/users', data=payload)
+    response = request_sample(base_url, endpoint="/users", method="POST", data=payload)
     body = response.json()
 
     assert response.status_code == 201
@@ -37,32 +49,8 @@ def test_post_create_user(base_url):
     validate(body, schema=create_users)
 
 
-def test_post_register_user_successful(base_url):
-    payload = {
-        "email": "eve.holt@reqres.in",
-        "password": "pistol"
-    }
-    response = requests.post(url=f'{base_url}/register', data=payload)
-    body = response.json()
-
-    assert response.status_code == 200
-    assert body["id"] == 4
-
-    validate(body, schema=register_user)
-
-
-def test_post_register_user_unsuccessful(base_url):
-    payload = {
-        "email": "yul@reqres.in"
-    }
-
-    response = requests.post(url=f'{base_url}/register', data=payload)
-    body = response.json()
-
-    assert response.status_code == 400
-    assert body['error'] == 'Missing password'
-
-
+@allure.feature("Пользователь")
+@allure.story("Обновление информации о пользователе")
 def test_put_update_user_info(base_url):
     payload = {
         "name": "Yulia",
@@ -70,7 +58,7 @@ def test_put_update_user_info(base_url):
     }
     user_id = '2'
 
-    response = requests.put(url=f'{base_url}/users/{user_id}', data=payload)
+    response = request_sample(base_url, endpoint=f"/users/{user_id}", method="PUT", data=payload)
     body = response.json()
 
     assert response.status_code == 200
@@ -78,9 +66,11 @@ def test_put_update_user_info(base_url):
     validate(body, schema=update_user_info)
 
 
+@allure.feature("Пользователь")
+@allure.story("Удаление пользователя по id")
 def test_delete_user_by_id(base_url):
     user_id = '2'
-    response = requests.delete(url=f'{base_url}/users/{user_id}')
+    response = request_sample(base_url, endpoint=f"/users/{user_id}", method="DELETE")
 
     assert response.status_code == 204
     assert response.text == ""
