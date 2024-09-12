@@ -1,7 +1,7 @@
 import allure
 from jsonschema import validate
-from schemas.user import users_list, create_users, update_user_info
-from utils.request_sample import request_sample
+from reqres_project_tests.schemas.user import users_list, create_users, update_user_info
+from reqres_project_tests.utils import request_sample
 
 
 @allure.feature("Пользователь")

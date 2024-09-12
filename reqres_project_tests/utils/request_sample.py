@@ -1,5 +1,5 @@
 import requests
-from utils.attach import response_attaching, response_logging
+from reqres_project_tests.utils.attach import response_attaching, response_logging
 
 
 def request_sample(base_url, endpoint, method, data=None, params=None):
