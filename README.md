@@ -11,6 +11,7 @@
 <img src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000" title="github" alt="github" width="40" height="40"/>&nbsp  
 <img src="https://user-images.githubusercontent.com/25181517/179090274-733373ef-3b59-4f28-9ecb-244bea700932.png" title="jenkins" alt="jenkins" width="40" height="40"/>&nbsp
 <img src="/resources/images/allure-icon.png" title="allure" alt="allure" width="40" height="40"/>&nbsp
+<img src="/resources/images/AllureTestOps.png" title="allure" alt="allure" width="40" height="40"/>&nbsp
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" title="telegram" alt="telegram" width="40" height="40"/>&nbsp
 </div>
 
