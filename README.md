@@ -10,7 +10,7 @@
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pycharm/pycharm-original.svg" title="pycharm" alt="pycharm" width="40" height="40"/>&nbsp 
 <img src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000" title="github" alt="github" width="40" height="40"/>&nbsp  
 <img src="https://user-images.githubusercontent.com/25181517/179090274-733373ef-3b59-4f28-9ecb-244bea700932.png" title="jenkins" alt="jenkins" width="40" height="40"/>&nbsp
-<img src="https://camo.githubusercontent.com/501c9d05b6660ba5e1a8753b8461e60d7ff1614656102c254ab800e14a6b19fa/68747470733a2f2f616c6c7572657265706f72742e6f72672f7075626c69632f696d672f616c6c7572652d7265706f72742e737667" title="allure" alt="allure" width="40" height="40"/>&nbsp
+<img src="/resources/images/allure-icon.png" title="allure" alt="allure" width="40" height="40"/>&nbsp
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" title="telegram" alt="telegram" width="40" height="40"/>&nbsp
 </div>
 
@@ -65,7 +65,7 @@ allure serve test/allure-results/
 </details>
 
 3. Для получения отчета о прохождении тестов в allure, следует нажать на
-   иконку<img src="https://camo.githubusercontent.com/501c9d05b6660ba5e1a8753b8461e60d7ff1614656102c254ab800e14a6b19fa/68747470733a2f2f616c6c7572657265706f72742e6f72672f7075626c69632f696d672f616c6c7572652d7265706f72742e737667" title="allure" alt="allure" width="20" height="20"/>
+   иконку<img src="/resources/images/allure-icon.png" title="allure" alt="allure" width="20" height="20"/>
 
 <details><summary>Пример отчета в allure</summary>
 
@@ -73,7 +73,21 @@ allure serve test/allure-results/
 
 </details>
 
-4. После прохождения тестов, в telegram придет сообщение с отчетом
+4. Отчет в [Allure TestOps](https://allure.autotests.cloud/project/4436/dashboards) <img src="resources/images/AllureTestOps.png" width="30" height="30"  alt="Allure TestOps"/>
+
+<details><summary>Основной отчет</summary>
+
+<img src="resources/images/allure_tests-2.png">
+
+</details>
+
+<details><summary>Тесты</summary>
+
+<img src="resources/images/allure_tests_keys.png">
+
+</details>
+
+5. После прохождения тестов, в telegram придет сообщение с отчетом
 
 <details><summary>Пример отчета в telegram</summary>
 
