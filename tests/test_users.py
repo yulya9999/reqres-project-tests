@@ -8,18 +8,15 @@ from reqres_project_tests.utils.request_sample import request_sample
 @allure.story("Проверка id пользователей на уникальность")
 def test_all_the_users_should_have_unique_id(base_url):
 
-    with allure.step("Отправка запроса"):
-        response = request_sample(base_url, endpoint="/users", method="GET")
-        body = response.json()
-        ids = [element['id'] for element in body['data']]
+    response = request_sample(base_url, endpoint="/users", method="GET")
+    body = response.json()
+    ids = [element['id'] for element in body['data']]
 
-    with allure.step("Проверка ответа"):
-        assert response.status_code == 200
-        assert body['per_page'] == 6
-        assert list(set(ids)) == ids
+    assert response.status_code == 200
+    assert body['per_page'] == 6
+    assert list(set(ids)) == ids
 
-    with allure.step("Проверка схемы"):
-        validate(body, schema=users_list)
+    validate(body, schema=users_list)
 
 
 @allure.feature("Пользователь")
