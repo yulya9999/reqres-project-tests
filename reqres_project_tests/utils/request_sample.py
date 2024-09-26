@@ -1,4 +1,5 @@
 import requests
+
 from reqres_project_tests.utils.attach import response_attaching, response_logging
 
 

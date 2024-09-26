@@ -65,15 +65,16 @@ allure serve test/allure-results/
 
 </details>
 
-3. Для получения отчета о прохождении тестов в [Allure](https://jenkins.autotests.cloud/job/reqres-project-tests-API/4/allure/), следует нажать на
+3. Для получения отчета о прохождении тестов
+   в [Allure](https://jenkins.autotests.cloud/job/reqres-project-tests-API/4/allure/), следует нажать на
    иконку<img src="/resources/images/allure-icon.png" title="allure" alt="allure" width="20" height="20"/>
 
 - ***Пример отчета в Allure***
 
 <img src="resources/images/allure-report-2.png">
 
-
-4. Для получения отчета о прохождении тестов в [Allure TestOps](https://allure.autotests.cloud/launch/42054), следует нажать на
+4. Для получения отчета о прохождении тестов в [Allure TestOps](https://allure.autotests.cloud/launch/42054), следует
+   нажать на
    иконку <img src="resources/images/AllureTestOps.png" width="30" height="30"  alt="Allure TestOps"/>
 
 - ***Пример отчета в Allure TestOps***
@@ -83,7 +84,6 @@ allure serve test/allure-results/
 - ***Просмотр тест-кейсов***
 
 <img src="resources/images/allure_tests_keys.png">
-
 
 5. После прохождения тестов, в telegram придет сообщение с отчетом
 
