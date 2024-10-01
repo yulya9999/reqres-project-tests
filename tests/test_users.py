@@ -5,7 +5,7 @@ from reqres_project_tests.schemas.user import users_list, create_users, update_u
 from reqres_project_tests.utils.request_sample import request_sample
 
 
-@allure.feature("Пользователь")
+@allure.feature("Handler /user")
 class TestUser:
 
     @allure.story("Проверка id пользователей на уникальность")

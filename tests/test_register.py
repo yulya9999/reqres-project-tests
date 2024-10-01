@@ -5,7 +5,7 @@ from reqres_project_tests.schemas.user import register_user
 from reqres_project_tests.utils.request_sample import request_sample
 
 
-@allure.feature("Регистрация")
+@allure.feature("Handler /register")
 class TestRegister:
 
     @allure.story("Регистрация с валидными данными")
